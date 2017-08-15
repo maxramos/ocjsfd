@@ -26,7 +26,7 @@ public class AuthController {
 	}
 
 	public String authenticate() {
-		log.info("Authenticate: " + username + ":" + password);
+		log.info("Authenticate: " + username + ": " + password);
 		return null;
 	}
 
