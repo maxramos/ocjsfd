@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>OCJSFD</title>
+	<f:metadata>
+		<f:viewParam name="viewKey" value="#{viewScope.viewKey}" />
+	</f:metadata>
+</h:head>
+<h:body>
+	<h3>EL</h3>
+	<h:panelGrid columns="2">
+		<h:outputText value="facesContext.isProjectStage('Development'): " />
+		<h:outputText value="'#{facesContext.isProjectStage('Development')}'" />
+		
+		<h:outputText value="pageContext: " />
+		<h:outputText value="'N/A - only usable in JSP'" />
+		
+		<h:outputText value="request.requestURI: " />
+		<h:outputText value="'#{request.requestURI}'" />
+		
+		<h:outputText value="session.maxInactiveInterval: " />
+		<h:outputText value="'#{session.maxInactiveInterval}'" />
+		
+		<h:outputText value="application.contextPath: " />
+		<h:outputText value="'#{application.contextPath}'" />
+		
+		<h:outputText value="view.viewId: " />
+		<h:outputText value="'#{view.viewId}'" />
+		
+		<h:outputText value="component.id: " />
+		<h:outputText id="outText" value="'#{component.id}'" />
+		
+		<h:outputText value="cc.id: " />
+		<h:outputText value="'TBA'" />
+		
+		<h:outputText value="flash.flashKey: " />
+		<h:outputText value="'#{flash.flashKey}'" />
+		
+		<h:outputText value="requestScope.requestKey: " />
+		<h:outputText value="'#{requestScope.requestKey}'" />
+		
+		<h:outputText value="viewScope.viewKey: " />
+		<h:outputText value="'#{viewScope.viewKey}'" />
+		
+		<h:outputText value="flowScope.flowKey: " />
+		<h:outputText value="'N/A - only in EE7+'" />
+		
+		<h:outputText value="sessionScope.sessionKey: " />
+		<h:outputText value="'#{sessionScope.sessionKey}'" />
+		
+		<h:outputText value="applicationScope.applicationKey: " />
+		<h:outputText value="'#{applicationScope.applicationKey}'" />
+		
+		<h:outputText value="initParam.initKey: " />
+		<h:outputText value="'#{initParam.initKey}'" />
+		
+		<h:outputText value="param.paramKey: " />
+		<h:outputText value="'#{param.paramKey}'" />
+		
+		<h:outputText value="paramValues.paramKey[0]: " />
+		<h:outputText value="'#{paramValues.paramKey[0]}'" />
+		
+		<h:outputText value="header.Host: " />
+		<h:outputText value="'#{header.Host}'" />
+		
+		<h:outputText value="headerValues['Accept-Encoding'][0]: " />
+		<h:outputText value="'#{headerValues['Accept-Encoding'][0]}'" />
+		
+		<h:outputText value="cookie.JSESSIONID.value: " />
+		<h:outputText value="'#{cookie.JSESSIONID.value}'" />
+		
+		<h:outputText value="resource['images:avengers.jpg']: " />
+		<img src="#{resource['images:avengers.jpg']}" alt="avengers" width="100" height="100" />
+	</h:panelGrid>
+</h:body>
+</html>

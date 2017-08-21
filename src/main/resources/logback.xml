@@ -2,9 +2,9 @@
 <configuration scan="true" scanPeriod="30 seconds">
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>../logs/psereader.log</file>
+		<file>../logs/ocjsfd.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>../logs/psereader.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<fileNamePattern>../logs/ocjsfd.log.%d{yyyy-MM-dd}</fileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<pattern>%d{yyyy-MM-dd HH:mm:ss} | %-20.-20logger{0} | %-5level | %msg%n</pattern>

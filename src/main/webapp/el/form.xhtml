@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>OCJSFD</title>
+	<style type="text/css">
+		body {
+			background-image: url("#{resource['images:avengers.jpg']}");
+			color: white;
+		}
+	</style>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:commandButton value="Submit" action="#{elController.submit}" />
+			<h:button value="Get" outcome="forward">
+				<f:param name="viewKey" value="View scoped value" />
+				<f:param name="paramKey" value="Request param value" />
+			</h:button>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
