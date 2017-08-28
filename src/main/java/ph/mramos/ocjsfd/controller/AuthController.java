@@ -3,6 +3,7 @@ package ph.mramos.ocjsfd.controller;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.component.html.HtmlInputSecret;
 import javax.faces.component.html.HtmlInputText;
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Named;
 
@@ -41,6 +42,10 @@ public class AuthController {
 
 	public void onPasswordChanged(ValueChangeEvent event) {
 		log.info("Password Change Event: Old Value: " + event.getOldValue() + ", New Value: " + event.getNewValue());
+	}
+	
+	public void submitListener(ActionEvent event) {
+		log.info("Submit Listener: " + username + ":" + password);
 	}
 
 	public String getUsername() {

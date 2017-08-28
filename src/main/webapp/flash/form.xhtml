@@ -10,7 +10,7 @@
 	<h:form>
 		<h:panelGrid columns="3">
 			<h:outputLabel for="input" value="Input" />
-			<h:inputText id="input" value="#{flashController.input}" required="true" />
+			<h:inputText id="input" value="#{flashController.input}" required="true" label="Input" />
 			<h:message for="input" />
 			
 			<h:commandButton value="Submit" action="#{flashController.submit}" />

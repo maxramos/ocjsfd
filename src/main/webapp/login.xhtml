@@ -27,8 +27,8 @@
 			</h:inputSecret>
 			<h:message for="password" />
 			
-			<h:commandButton value="Login" action="#{authController.authenticate}" />
-			<h:commandButton value="Forgot Password" action="#{authController.forgotPassword}" immediate="true" />
+			<h:commandButton value="Login" action="#{authController.authenticate}" actionListener="#{authController.submitListener}" />
+			<h:commandButton value="Forgot Password" action="#{authController.forgotPassword}" actionListener="#{authController.submitListener}" immediate="true" />
 			<h:button value="Clear" outcome="login" />
 		</h:panelGrid>
 	</h:form>
