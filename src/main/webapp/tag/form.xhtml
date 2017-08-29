@@ -7,8 +7,12 @@
 	<title>OCJSFD</title>
 </h:head>
 <h:body>
-	<h:form>
+	<h:outputText id="out0" value="Out0" />
+
+	<h:form id="form1" lang="en_US">
 		<h:panelGrid columns="1">
+			<h:outputText id="out1" value="Form1 Out1" />
+		
 			<h:outputText value="#{tagController.creditCard}">
 				<f:attribute name="separator" value="-" /> 
 				<f:converter converterId="creditCardConverter" />
@@ -25,6 +29,12 @@
 				<f:param name="multiKey" value="This is Key 2" />
 			</h:link>
 		</h:panelGrid>
+	</h:form>
+	
+	<h:form id="form2" lang="fl_PH">
+		<h:outputText id="out1" value="Form2 Out1" />
+		<h:outputText id="out2" value="Form2 Out2" />
+		<h:commandButton id="submit1" value="Submit" action="form" actionListener="#{tagController.form2ActionListener}" />
 	</h:form>
 </h:body>
 </html>
