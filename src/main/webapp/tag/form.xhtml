@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
 	<title>OCJSFD</title>
 </h:head>
@@ -36,5 +37,14 @@
 		<h:outputText id="out2" value="Form2 Out2" />
 		<h:commandButton id="submit1" value="Submit" action="form" actionListener="#{tagController.form2ActionListener}" />
 	</h:form>
+
+	DataTable: 
+	<c:if test="#{tagController.numbers[0] > 5}">
+		<h:dataTable value="${tagController.numbers}" var="number">
+			<h:column>
+				<h:outputText value="${number}" rendered="${number > 5}" />
+			</h:column>
+		</h:dataTable>
+	</c:if>
 </h:body>
 </html>
