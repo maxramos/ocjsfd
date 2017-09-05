@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>OCJSFD</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputScript library="js" name="script.js" target="body" />
+</h:head>
+<h:body>
+	<h:panelGrid columns="2">
+		<h:outputText value="Timestamp" />
+		<h:outputText value="#{flash.timestamp}" />
+	
+		<h:outputText value="Username" />
+		<h:outputText value="#{flash.username}" />
+		
+		<h:outputText value="Password" />
+		<h:outputText value="#{flash.password}" />
+		
+		<h:outputText value="Address" />
+		<h:outputText value="#{flash.address}" styleClass="address" />
+	</h:panelGrid>
+</h:body>
+</html>

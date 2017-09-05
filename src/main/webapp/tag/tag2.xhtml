@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>OCJSFD</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputScript library="js" name="script.js" target="body" />
+</h:head>
+<h:body>
+	<h:form>
+		<h:inputHidden id="timestamp" value="#{tag2Controller.timestamp}" />
+		<h:panelGrid columns="2">
+			<h:outputLabel for="username" value="Username" />
+			<h:inputText id="username" value="#{tag2Controller.username}" />
+			
+			<h:outputLabel for="password" value="Password" />
+			<h:inputSecret id="password" value="#{tag2Controller.password}" />
+			
+			<h:outputLabel for="address" value="Address" />
+			<h:inputTextarea id="address" value="#{tag2Controller.address}" cols="20" rows="5" />
+			
+			<h:commandButton value="Save" action="#{tag2Controller.save}" onclick="generateTimestamp(this.form)" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

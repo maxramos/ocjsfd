@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+html {
+	background-image: url("#{resource['images:bg.jpg']}");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.address {
+	white-space: pre;
+}
