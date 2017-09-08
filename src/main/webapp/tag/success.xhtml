@@ -11,11 +11,10 @@
 </h:head>
 <h:body>
 	<h:panelGrid columns="2">
-		<h:outputText value="Timestamp" />
-		<h:outputText value="#{flash.timestamp}" />
-	
 		<h:outputText value="Username" />
-		<h:outputText value="#{flash.username}" />
+		<h:outputFormat value="Welcome #{flash.username}, today is  {0}">
+			<f:param value="#{flash.timestamp}" />
+		</h:outputFormat>
 		
 		<h:outputText value="Password" />
 		<h:outputText value="#{flash.password}" />
