@@ -20,7 +20,14 @@
 		<h:outputText value="#{flash.password}" />
 		
 		<h:outputText value="Address" />
-		<h:outputText value="#{flash.address}" styleClass="address" /> 
+		<h:outputText value="#{flash.address}" styleClass="address" />
+		
+		<h:outputText value="Logo" />
+		<h:panelGroup>
+			<h:graphicImage library="images" name="tag/java-black.png" width="60" />
+			<h:graphicImage value="#{resource['images:tag/java-blue.png']}" width="60" />
+			<h:graphicImage url="/resources/images/tag/java-red.png" width="60" />
+		</h:panelGroup>
 	</h:panelGrid>
 </h:body>
 </html>
