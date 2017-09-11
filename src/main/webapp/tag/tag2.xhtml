@@ -14,7 +14,7 @@
 		<h:inputHidden id="timestamp" value="#{tag2Controller.timestamp}" />
 		<h:panelGrid columns="2">
 			<h:outputLabel for="username" value="Username" />
-			<h:inputText id="username" value="#{tag2Controller.username}" />
+			<h:inputText id="username" value="#{tag2Controller.username}" required="true" />
 			
 			<h:outputLabel for="password" value="Password" />
 			<h:inputSecret id="password" value="#{tag2Controller.password}" />
@@ -22,7 +22,44 @@
 			<h:outputLabel for="address" value="Address" />
 			<h:inputTextarea id="address" value="#{tag2Controller.address}" cols="20" rows="5" />
 			
-			<h:commandButton value="Save" action="#{tag2Controller.save}" onclick="generateTimestamp(this.form)" />
+			<h:outputLabel for="maritalStatus" value="Marital Status" />
+			<h:selectOneRadio id="maritalStatus" value="#{tag2Controller.maritalStatus}" layout="pageDirection">
+				<f:selectItem itemLabel="Single" itemValue="single" />
+				<f:selectItem itemLabel="Married" itemValue="married" />
+				<f:selectItem itemLabel="Separated" itemValue="separated" />
+			</h:selectOneRadio>
+			
+			<h:outputLabel for="employed" value="Employed" />
+			<h:selectBooleanCheckbox id="employed" value="#{tag2Controller.employed}" />
+			
+			<h:outputLabel for="food" value="Food" />
+			<h:selectManyCheckbox id="food" value="#{tag2Controller.food}" layout="pageDirection">
+				<f:selectItems value="#{tag2Controller.foods}" />
+			</h:selectManyCheckbox>
+			
+			<h:outputLabel for="country" value="Country" />
+			<h:selectOneMenu id="country" value="#{tag2Controller.country}" hideNoSelectionOption="true">
+				<f:selectItem itemLabel="Select country" itemValue="No Selection" noSelectionOption="true" />
+				<f:selectItems value="#{tag2Controller.countries}" />
+			</h:selectOneMenu>
+			
+			<h:outputLabel for="drink" value="Drink" />
+			<h:selectManyMenu id="drink" value="#{tag2Controller.drink}">
+				<f:selectItems value="#{tag2Controller.drinks}" />
+			</h:selectManyMenu>
+			
+			<h:outputLabel for="salary" value="Salary" />
+			<h:selectOneListbox id="salary" value="#{tag2Controller.salary}">
+				<f:selectItems value="#{tag2Controller.salaries}" />
+			</h:selectOneListbox>
+			
+			<h:outputLabel for="color" value="Color" />
+			<h:selectManyListbox id="color" value="#{tag2Controller.color}">
+				<f:selectItems value="#{tag2Controller.colors}" />
+			</h:selectManyListbox>
+			
+			<h:commandButton value="Save" action="#{tag2Controller.save}" onclick="generateTimestamp(this.form)"  />
+			<h:commandLink value="Save" action="#{tag2Controller.save}" />
 		</h:panelGrid>
 	</h:form>
 </h:body>
