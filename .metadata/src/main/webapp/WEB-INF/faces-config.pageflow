@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15019936925530" configfile="/ocjsfd/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15019936925530" configfile="/ocjsfd/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="navigation/homePage.xhtml" id="pf15051848082519" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf150518486220610 pf150518486220711" inlinks="pf150518534932214" path="/navigation/homePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="navigation/successLogin.xhtml" id="pf150518486220712" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf150518486220610" path="/navigation/successLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="navigation/failedLogin.xhtml" id="pf150518486220713" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf150518486220711" path="/navigation/failedLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf150518534932215" outlinks="pf150518534932214" path="*"/>
+  <links id="pf150518486220610" target="pf150518486220712" source="pf15051848082519" outcome="success" redirect="true"/>
+  <links id="pf150518486220711" target="pf150518486220713" source="pf15051848082519" outcome="fail" redirect="true"/>
+  <links id="pf150518534932214" target="pf15051848082519" source="pf150518534932215" outcome="home"/>
+</pageflow:Pageflow>

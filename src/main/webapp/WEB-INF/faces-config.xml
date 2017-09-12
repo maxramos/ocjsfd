@@ -7,4 +7,30 @@
 	<lifecycle>
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
 	</lifecycle>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/navigation/homePage.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/navigation/homePage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/navigation/successLogin.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/navigation/failedLogin.xhtml</to-view-id>
+			<redirect>
+				<view-param>
+					<name>user</name>
+					<value>#{navigationController.username}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>
