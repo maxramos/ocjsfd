@@ -18,14 +18,21 @@
 	<navigation-rule>
 		<from-view-id>/navigation/homePage.xhtml</from-view-id>
 		<navigation-case>
+			<from-action>#{navigationController.submit}</from-action>
 			<from-outcome>success</from-outcome>
+			<if>#{navigationController.username eq 'mac'}</if>
 			<to-view-id>/navigation/successLogin.xhtml</to-view-id>
-			<redirect />
+			<redirect>
+				<view-param>
+					<name>item</name>
+					<value>This is a new item</value>
+				</view-param>
+			</redirect>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>fail</from-outcome>
 			<to-view-id>/navigation/failedLogin.xhtml</to-view-id>
-			<redirect>
+			<redirect include-view-params="true">
 				<view-param>
 					<name>user</name>
 					<value>#{navigationController.username}</value>

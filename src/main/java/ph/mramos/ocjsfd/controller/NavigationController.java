@@ -8,21 +8,34 @@ import javax.inject.Named;
 public class NavigationController {
 	
 	private String username;
+	private String message;
 	
 	public String submit() {
-		if ("max".equals(username)) {
+		if ("max".equals(username) || "mac".equals(username)) {
 			return "success";
 		}
 		
 		return "fail";
 	}
 
+	public void onBeforeRenderView() {
+		message = "This is a message";
+	}
+	
 	public String getUsername() {
 		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 }
