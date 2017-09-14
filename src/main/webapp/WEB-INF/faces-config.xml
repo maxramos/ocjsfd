@@ -20,7 +20,7 @@
 		<from-view-id>/navigation/homePage.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{navigationController.submit}</from-action>
-			<from-outcome>success</from-outcome>
+<!-- 			<from-outcome>success</from-outcome> -->
 			<if>#{navigationController.username eq 'mac'}</if>
 			<to-view-id>/navigation/successLogin.xhtml</to-view-id>
 			<redirect>

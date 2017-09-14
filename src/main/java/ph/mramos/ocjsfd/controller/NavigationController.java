@@ -11,12 +11,12 @@ public class NavigationController {
 	private String username;
 	private String message;
 	
-	public String submit() {
+	public void submit() {
 		if ("max".equals(username) || "mac".equals(username)) {
-			return "success";
+//			return "success";
 		}
 		
-		return "fail";
+//		return "fail";
 	}
 
 	public void onBeforeRenderView(ComponentSystemEvent event) {
