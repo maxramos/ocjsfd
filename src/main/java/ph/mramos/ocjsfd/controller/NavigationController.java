@@ -1,6 +1,7 @@
 package ph.mramos.ocjsfd.controller;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Named;
 
 @Named
@@ -18,7 +19,7 @@ public class NavigationController {
 		return "fail";
 	}
 
-	public void onBeforeRenderView() {
+	public void onBeforeRenderView(ComponentSystemEvent event) {
 		message = "This is a message";
 	}
 	

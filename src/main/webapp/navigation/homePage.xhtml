@@ -14,6 +14,10 @@
 			<h:inputText id="username" value="#{navigationController.username}" />
 			
 			<h:commandButton value="Submit" action="#{navigationController.submit}" />
+			<h:link value="Submit" outcome="redirect1">
+				<f:param name="key1" value="Value1" />
+				<f:param name="key2" value="Value2" />
+			</h:link>
 		</h:panelGrid>
 	</h:form>
 </h:body>
