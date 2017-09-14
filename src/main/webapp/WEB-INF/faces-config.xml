@@ -9,6 +9,7 @@
 	</lifecycle>
 	
 	<navigation-rule>
+		<from-view-id>/navigation/*</from-view-id>
 		<navigation-case>
 			<from-outcome>home</from-outcome>
 			<to-view-id>/navigation/homePage.xhtml</to-view-id>
