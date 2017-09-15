@@ -10,13 +10,19 @@ public class NavigationController {
 	
 	private String username;
 	private String message;
+	private Integer age = 20;
+	private String birthPlace = "Lucena City";
 	
-	public void submit() {
-		if ("max".equals(username) || "mac".equals(username)) {
-//			return "success";
+	public String submit() {
+		if ("max".equals(username)) {
+			return "success";
 		}
 		
-//		return "fail";
+		if ("mac".equals(username)) {
+			return null;
+		}
+		 
+		return "fail";
 	}
 
 	public void onBeforeRenderView(ComponentSystemEvent event) {
@@ -37,6 +43,22 @@ public class NavigationController {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public String getBirthPlace() {
+		return birthPlace;
+	}
+
+	public void setBirthPlace(String birthPlace) {
+		this.birthPlace = birthPlace;
 	}
 
 }

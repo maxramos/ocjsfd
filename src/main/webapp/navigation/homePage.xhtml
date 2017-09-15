@@ -14,9 +14,14 @@
 			<h:inputText id="username" value="#{navigationController.username}" />
 			
 			<h:commandButton value="Submit" action="#{navigationController.submit}" />
-			<h:link value="Submit" outcome="redirect1">
+			<h:link value="Redirect1" outcome="redirect1">
 				<f:param name="key1" value="Value1" />
 				<f:param name="key2" value="Value2" />
+			</h:link>
+			
+			<h:link value="Redirect3" outcome="redirect3">
+				<f:param name="age" value="#{navigationController.age}" />
+				<f:param name="birthPlace" value="#{navigationController.birthPlace}" />
 			</h:link>
 		</h:panelGrid>
 	</h:form>
