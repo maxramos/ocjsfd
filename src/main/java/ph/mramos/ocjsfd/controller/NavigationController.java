@@ -1,6 +1,10 @@
 package ph.mramos.ocjsfd.controller;
 
+import java.util.Map;
+
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.context.Flash;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Named;
 
@@ -23,6 +27,14 @@ public class NavigationController {
 		}
 		 
 		return "fail";
+	}
+	
+	public String submit2() {
+		Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
+		flash.put("age", map.get("age"));
+		flash.put("birthPlace", map.get("birthPlace"));
+		return "redirect4?faces-redirect=true";
 	}
 
 	public void onBeforeRenderView(ComponentSystemEvent event) {
