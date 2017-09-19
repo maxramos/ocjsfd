@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>OCJSFD</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="weight" value="Weight" />
+			<h:inputText id="weight" value="#{converterController.weight}">
+				<f:convertNumber type="number" minFractionDigits="2" maxFractionDigits="4" />
+			</h:inputText>
+			
+			<h:outputLabel for="cost" value="Cost" />
+			<h:inputText id="cost" value="#{converterController.cost}">
+				<f:convertNumber type="currency" currencySymbol="$" />
+			</h:inputText>
+			
+			<h:outputLabel for="percentage" value="Percentage" />
+			<h:inputText id="percentage" value="#{converterController.percentage}">
+				<f:convertNumber type="percent" minFractionDigits="2" />
+			</h:inputText>				
+			
+			<h:outputLabel for="birthday" value="Birthday" />
+			<h:panelGroup>
+			<h:inputText id="birthday" value="#{converterController.birthday}">
+				<f:convertDateTime type="date" dateStyle="default"  />
+			</h:inputText>
+			<h:inputText id="birthday2" value="#{converterController.birthday}">
+				<f:convertDateTime type="date" dateStyle="short"  />
+			</h:inputText>
+			<h:inputText id="birthday3" value="#{converterController.birthday}">
+				<f:convertDateTime type="date" dateStyle="medium"  />
+			</h:inputText>
+			<h:inputText id="birthday4" value="#{converterController.birthday}">
+				<f:convertDateTime type="date" dateStyle="long"  />
+			</h:inputText>
+			<h:inputText id="birthday5" value="#{converterController.birthday}">
+				<f:convertDateTime type="date" dateStyle="full"  />
+			</h:inputText>
+			</h:panelGroup>
+			
+			<h:outputLabel for="birthtime" value="Birthtime" />
+			<h:panelGroup>
+			<h:inputText id="birthtime" value="#{converterController.birthtime}">
+				<f:convertDateTime type="time"  timeStyle="default" />
+			</h:inputText>
+			<h:inputText id="birthtime2" value="#{converterController.birthtime}">
+				<f:convertDateTime type="time"  timeStyle="short" />
+			</h:inputText>
+			<h:inputText id="birthtime3" value="#{converterController.birthtime}">
+				<f:convertDateTime type="time"  timeStyle="medium" />
+			</h:inputText>
+			<h:inputText id="birthtime4" value="#{converterController.birthtime}">
+				<f:convertDateTime type="time"  timeStyle="long" />
+			</h:inputText>
+			<h:inputText id="birthtime5" value="#{converterController.birthtime}">
+				<f:convertDateTime type="time"  timeStyle="full" />
+			</h:inputText>
+			</h:panelGroup>
+			
+			<h:outputLabel for="timestamp" value="Timestamp" />
+			<h:panelGroup>
+			<h:inputText id="timestamp" value="#{converterController.timestamp}">
+				<f:convertDateTime type="both" dateStyle="default" timeStyle="default" />
+			</h:inputText>
+			<h:inputText id="timestamp2" value="#{converterController.timestamp}">
+				<f:convertDateTime type="both" dateStyle="short" timeStyle="short" />
+			</h:inputText>
+			<h:inputText id="timestamp3" value="#{converterController.timestamp}">
+				<f:convertDateTime type="both" dateStyle="medium" timeStyle="medium" />
+			</h:inputText>
+			<h:inputText id="timestamp4" value="#{converterController.timestamp}">
+				<f:convertDateTime type="both" dateStyle="long" timeStyle="long" />
+			</h:inputText>
+			<h:inputText id="timestamp5" value="#{converterController.timestamp}">
+				<f:convertDateTime type="both" dateStyle="full" timeStyle="full" />
+			</h:inputText>
+			</h:panelGroup>
+			
+			<h:outputLabel for="user" value="User" />
+			<h:inputText id="user" value="#{converterController.user}">
+				<f:converter converterId="userConverter" />
+			</h:inputText>
+			
+			<h:commandButton value="Submit" action="#{converterController.submit}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
