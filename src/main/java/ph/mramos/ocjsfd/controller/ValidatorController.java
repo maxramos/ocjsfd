@@ -13,8 +13,8 @@ public class ValidatorController {
 
 	private String username;
 	private String name;
-	private int age;
-	private double salary;
+	private Integer age;
+	private Double salary;
 	private String ipAddress;
 	private User user;
 	private String address;
@@ -47,19 +47,19 @@ public class ValidatorController {
 		this.name = name;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
-	public double getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(double salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 

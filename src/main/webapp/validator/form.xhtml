@@ -11,37 +11,37 @@
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel for="username" value="Username" />
-			<h:inputText id="username" value="#{validatorController.username}">
+			<h:inputText id="username" label="Username" value="#{validatorController.username}">
 				<f:validateRequired />
 			</h:inputText>
 			
 			<h:outputLabel for="name" value="Name" />
-			<h:inputText id="name" value="#{validatorController.name}">
+			<h:inputText id="name" label="Name" value="#{validatorController.name}">
 				<f:validateLength minimum="3" maximum="6" />
 			</h:inputText>
 			
 			<h:outputLabel for="age" value="Age" />
-			<h:inputText id="age" value="#{validatorController.age}">
+			<h:inputText id="age" label="Age" value="#{validatorController.age}">
 				<f:validateLongRange minimum="18" maximum="30"  />
 			</h:inputText>
 			
 			<h:outputLabel for="salary" value="Salary" />
-			<h:inputText id="salary" value="#{validatorController.salary}">
+			<h:inputText id="salary" label="Salary" value="#{validatorController.salary}">
 				<f:validateDoubleRange minimum="15000" maximum="30000" />
 			</h:inputText>
 			
 			<h:outputLabel for="ipAddress" value="IP Address" />
-			<h:inputText id="ipAddress" value="#{validatorController.ipAddress}">
-				<f:validateRegex pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\" />
+			<h:inputText id="ipAddress" label="IP Address" value="#{validatorController.ipAddress}" validatorMessage="Invalid IP Address">
+				<f:validateRegex pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" />
 			</h:inputText>
 			
 			<h:outputLabel for="user" value="User" />
-			<h:inputText id="user" value="#{validatorController.user}">
-				<f:validateBean />
+			<h:inputText id="user" label="User" value="#{validatorController.user}">
+				<f:converter converterId="userConverter" />
 			</h:inputText>
 			
 			<h:outputLabel for="address" value="Address" />
-			<h:inputText id="address" value="#{validatorController.address}">
+			<h:inputText id="address" label="Address" value="#{validatorController.address}">
 				<f:validator validatorId="addressValidator" />
 			</h:inputText>
 			

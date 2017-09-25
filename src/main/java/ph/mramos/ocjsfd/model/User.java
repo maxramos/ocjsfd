@@ -4,6 +4,10 @@ public class User {
 
 	private String username;
 	
+	public User() {
+		super();
+	}
+
 	public User(String username) {
 		this.username = username;
 	}
