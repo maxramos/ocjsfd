@@ -8,6 +8,11 @@
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
 	</lifecycle>
 	
+<!-- 	<application> -->
+<!-- 		<message-bundle></message-bundle> -->
+<!-- 		<resource-bundle></resource-bundle> -->
+<!-- 	</application> -->
+	
 	<navigation-rule>
 		<from-view-id>/navigation/*</from-view-id>
 		<navigation-case>
