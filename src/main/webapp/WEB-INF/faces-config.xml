@@ -8,4 +8,43 @@
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
 <!-- test rebase -->
 	</lifecycle>
+	
+<!-- 	<application> -->
+<!-- 		<message-bundle></message-bundle> -->
+<!-- 		<resource-bundle></resource-bundle> -->
+<!-- 	</application> -->
+	
+	<navigation-rule>
+		<from-view-id>/navigation/*</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/navigation/homePage.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/navigation/homePage.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{navigationController.submit}</from-action>
+<!-- 			<from-outcome>success</from-outcome> -->
+			<if>#{navigationController.username eq 'mac'}</if>
+			<to-view-id>/navigation/successLogin.xhtml</to-view-id>
+			<redirect>
+				<view-param>
+					<name>item</name>
+					<value>This is a new item</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/navigation/failedLogin.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>user</name>
+					<value>#{navigationController.username}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

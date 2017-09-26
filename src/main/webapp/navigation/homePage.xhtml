@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>OCJSFD</title>
+	<f:metadata>
+		<f:viewParam name="age" value="#{navigationController.age}" />
+		<f:viewParam name="birthPlace" value="#{navigationController.birthPlace}" />
+	</f:metadata>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="username" value="Username" />
+			<h:inputText id="username" value="#{navigationController.username}" />
+			
+			<h:commandButton value="Submit" action="#{navigationController.submit}" />
+			<h:link value="Redirect1" outcome="redirect1">
+				<f:param name="key1" value="Value1" />
+				<f:param name="key2" value="Value2" />
+			</h:link>
+			
+			<h:link value="Redirect3" outcome="redirect3">
+				<f:param name="age" value="#{navigationController.age}" />
+				<f:param name="birthPlace" value="#{navigationController.birthPlace}" />
+			</h:link>
+			<h:commandButton value="Redirect3" action="redirect3?faces-redirect=true&amp;includeViewParams=true" />
+			
+			<h:commandButton value="Redirect4" action="#{navigationController.submit2}">
+				<f:param name="age" value="30" />
+				<f:param name="birthPlace" value="Pagbilao" />
+			</h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
