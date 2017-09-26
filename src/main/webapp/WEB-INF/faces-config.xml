@@ -6,6 +6,7 @@
 	version="2.0">
 	<lifecycle>
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
+<!-- test rebase -->
 	</lifecycle>
 	
 <!-- 	<application> -->
