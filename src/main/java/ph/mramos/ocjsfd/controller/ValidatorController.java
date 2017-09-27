@@ -4,6 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
 import javax.inject.Named;
+import javax.validation.Valid;
 
 import ph.mramos.ocjsfd.model.User;
 
@@ -16,8 +17,10 @@ public class ValidatorController {
 	private Integer age;
 	private Double salary;
 	private String ipAddress;
-	private User user;
 	private String address;
+	
+	@Valid
+	private User user = new User();
 	
 	public String submit() {
 		Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
@@ -26,8 +29,8 @@ public class ValidatorController {
 		flash.put("age", age);
 		flash.put("salary", salary);
 		flash.put("ipAddress", ipAddress);
-		flash.put("user", user);
 		flash.put("address", address);
+		flash.put("user", user);
 		return "success?faces-redirect=true";
 	}
 
@@ -71,20 +74,20 @@ public class ValidatorController {
 		this.ipAddress = ipAddress;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public String getAddress() {
 		return address;
 	}
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
