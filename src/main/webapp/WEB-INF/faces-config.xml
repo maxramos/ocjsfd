@@ -6,13 +6,17 @@
 	version="2.0">
 	<lifecycle>
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
-<!-- test rebase -->
 	</lifecycle>
 	
 <!-- 	<application> -->
 <!-- 		<message-bundle></message-bundle> -->
 <!-- 		<resource-bundle></resource-bundle> -->
 <!-- 	</application> -->
+	
+<!-- 	<converter> -->
+<!-- 		<converter-id>userConverter</converter-id> -->
+<!-- 		<converter-class>ph.mramos.ocjsfd.converter.UserConverter</converter-class> -->
+<!-- 	</converter> -->
 	
 	<navigation-rule>
 		<from-view-id>/navigation/*</from-view-id>
