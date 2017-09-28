@@ -18,6 +18,11 @@
 <!-- 		<converter-class>ph.mramos.ocjsfd.converter.UserConverter</converter-class> -->
 <!-- 	</converter> -->
 	
+<!-- 	<validator> -->
+<!-- 		<validator-id>addressValidator</validator-id> -->
+<!-- 		<validator-class>ph.mramos.ocjsfd.validator.AddressValidator</validator-class> -->
+<!-- 	</validator> -->
+	
 	<navigation-rule>
 		<from-view-id>/navigation/*</from-view-id>
 		<navigation-case>
