@@ -7,27 +7,28 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.validation.groups.Default;
 
 public class User {
 
-	@NotNull(groups = { GroupAll.class, Group1.class })
-	@Size(min = 1, groups = { GroupAll.class, Group1.class })
+	@NotNull(groups = { Default.class, Group1.class })
+	@Size(min = 1, groups = { Default.class, Group1.class })
 	private String username;
 
-	@Size(min = 3, max = 6, groups = { GroupAll.class, Group1.class })
+	@Size(min = 3, max = 6, groups = { Default.class, Group1.class })
 	private String name;
 
-	@NotNull(groups = { GroupAll.class, Group2.class })
-	@Min(value = 18, groups = { GroupAll.class, Group2.class })
-	@Max(value = 30, groups = { GroupAll.class, Group2.class })
+	@NotNull(groups = { Default.class, Group2.class })
+	@Min(value = 18, groups = { Default.class, Group2.class })
+	@Max(value = 30, groups = { Default.class, Group2.class })
 	private Integer age;
 
-	@NotNull(groups = { GroupAll.class, Group2.class })
-	@DecimalMin(value = "15000.50", groups = { GroupAll.class, Group2.class })
-	@DecimalMax(value = "30000.50", groups = { GroupAll.class, Group2.class })
+	@NotNull(groups = { Default.class, Group2.class })
+	@DecimalMin(value = "15000.50", groups = { Default.class, Group2.class })
+	@DecimalMax(value = "30000.50", groups = { Default.class, Group2.class })
 	private Double salary;
 
-	@Pattern(regexp = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}", groups = GroupAll.class)
+	@Pattern(regexp = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}", groups = Default.class)
 	private String ipAddress;
 
 	public User() {
