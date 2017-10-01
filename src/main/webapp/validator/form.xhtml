@@ -3,7 +3,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
 <h:head>
 	<title>OCJSFD</title>
 </h:head>
@@ -63,6 +64,12 @@
 			<h:outputLabel for="user_ipAddress" value="User IP address" />
 			<h:inputText id="user_ipAddress" label="User IP address" value="#{validatorController.user.ipAddress}">
 				<f:validateBean validationGroups="ph.mramos.ocjsfd.model.Group1" />
+			</h:inputText>
+			
+			<h:outputLabel for="creditCard" value="Credit Card" />
+			<h:inputText id="creditCard" label="Credit Card" value="#{validatorController.creditCard}">
+				<oc:convertCreditCard separator="-"/ >
+				<oc:validateCreditCard errorSummary="Invalid Credit Card." errorDetail="Invalid Credit Card." />
 			</h:inputText>
 			
 			<h:commandButton value="Submit" action="#{validatorController.submit}" />

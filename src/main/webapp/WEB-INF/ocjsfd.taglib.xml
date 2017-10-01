@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facelet-taglib xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
+	version="2.0">
+	<namespace>http://ocjsfd.mramos.ph</namespace>
+	
+	<tag>
+		<tag-name>convertCreditCard</tag-name>
+		<converter>
+			<converter-id>creditCardConverter</converter-id>
+		</converter>
+		<attribute>
+			<name>separator</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>validateCreditCard</tag-name>
+		<validator>
+			<validator-id>creditCardValidator</validator-id>
+		</validator>
+		<attribute>
+			<name>errorSummary</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>errorDetail</name>
+		</attribute>
+	</tag>
+</facelet-taglib>

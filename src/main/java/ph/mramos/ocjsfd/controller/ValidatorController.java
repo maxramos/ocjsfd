@@ -22,6 +22,8 @@ public class ValidatorController {
 	@Valid
 	private User user = new User();
 	
+	private String creditCard;
+
 	public String submit() {
 		Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
 		flash.put("username", username);
@@ -31,6 +33,8 @@ public class ValidatorController {
 		flash.put("ipAddress", ipAddress);
 		flash.put("address", address);
 		flash.put("user", user);
+		flash.put("creditCard", creditCard);
+		
 		return "success?faces-redirect=true";
 	}
 
@@ -88,6 +92,14 @@ public class ValidatorController {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getCreditCard() {
+		return creditCard;
+	}
+
+	public void setCreditCard(String creditCard) {
+		this.creditCard = creditCard;
 	}
 
 }

@@ -3,7 +3,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
 <h:head>
 	<title>OCJSFD</title>
 </h:head>
@@ -30,6 +31,11 @@
 		
 		<h:outputLabel value="User" />
 		<h:outputText id="user" value="#{flash.user}" />
+		
+		<h:outputLabel value="Credit Card" />
+		<h:outputText id="creditCard" value="#{flash.creditCard}" >
+			<oc:convertCreditCard separator="-" />
+		</h:outputText>
 	</h:panelGrid>
 </h:body>
 </html>
