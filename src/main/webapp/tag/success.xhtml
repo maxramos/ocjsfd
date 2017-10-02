@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/template/template.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
-<h:head>
-	<title>OCJSFD</title>
-	<h:outputStylesheet library="css" name="style.css" />
-	<h:outputScript library="js" name="script.js" target="body" />
-</h:head>
-<h:body>
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
+<ui:define name="title">
+	Tag
+</ui:define>
+<ui:define name="content-title">
+	Tag Test
+</ui:define>
+<ui:define name="content">
 	<h:panelGrid columns="2">
 		<h:outputText value="Username" />
 		<h:outputFormat value="Welcome #{flash.username}, today is  {0}">
@@ -50,5 +52,5 @@
 		<h:outputText value="Color" />
 		<h:outputText value="#{flash.color}" />
 	</h:panelGrid>
-</h:body>
-</html>
+</ui:define>
+</ui:composition>

@@ -3,8 +3,13 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
-	<h:panelGrid>	
+	<h:panelGrid>
+		<h:link value="EL" outcome="/el/form" />
+		<h:link value="Flash" outcome="/flash/form" />
+		<h:link value="Tag" outcome="/tag/form" />
+		<h:link value="Navigation" outcome="/navigation/homePage.xhtml" />
 		<h:link value="Converter" outcome="/converter/form" />
 		<h:link value="Validator" outcome="/validator/form" />
+		<h:link value="Facelets" outcome="/facelets/compositionForm" />
 	</h:panelGrid>
 </ui:composition>

@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/template/template.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
-<h:head>
-	<title>OCJSFD</title>
-</h:head>
-<h:body>
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
+<ui:define name="title">
+	Tag
+</ui:define>
+<ui:define name="content-title">
+	Tag Test
+</ui:define>
+<ui:define name="content">
 	<h:outputText id="out0" value="Out0" />
 
 	<h:form id="form1" lang="en_US">
@@ -46,5 +50,5 @@
 			</h:column>
 		</h:dataTable>
 	</c:if>
-</h:body>
-</html>
+</ui:define>
+</ui:composition>
