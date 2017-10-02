@@ -15,7 +15,9 @@
 <h:body>
 	<header id="header">
 		<ui:insert name="header">
-			<ui:include src="/section/header.xhtml" />
+			<ui:include src="/facelets/includeHeader.xhtml">
+				<ui:param name="keyHeader" value="This is header value." />
+			</ui:include>
 		</ui:insert>
 	</header>
 	<nav id="navigation">
