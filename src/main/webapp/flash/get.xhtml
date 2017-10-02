@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/template/template.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
+<ui:define name="title">
+	Flash
+</ui:define>
+<ui:define name="content-title">
+	Flash Test
+</ui:define>
+<ui:define name="content">
 	<f:metadata>
 		<f:viewParam name="input" value="#{flash.input}" />
 	</f:metadata>
-	<title>OCJSFD</title>
-</h:head>
-<h:body>
-	<h3>Get</h3>
 	<h:panelGrid columns="2">
 		<h:outputText value="Get Input: " />
 		<h:outputText value="'#{flash.input}'" />		
 	</h:panelGrid>
-</h:body>
-</html>
+</ui:define>
+</ui:composition>

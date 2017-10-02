@@ -8,6 +8,8 @@ import java.time.ZoneId;
 import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.context.Flash;
 import javax.inject.Named;
 
 import ph.mramos.ocjsfd.model.User;
@@ -19,14 +21,22 @@ public class ConverterController {
 	private Double weight = 9_246.1357D;
 	private BigDecimal cost = new BigDecimal("95478.32");
 	private Double percentage = 0.9568D;
-	
+
 	private Date birthday = Date.from(LocalDate.of(1990, 06, 25).atStartOfDay(ZoneId.of("UTC")).toInstant());
 	private Date birthtime = Date.from(LocalTime.of(13, 30, 45).atDate(LocalDate.now()).atZone(ZoneId.of("UTC")).toInstant());
 	private Date timestamp = Date.from(LocalDateTime.now().atZone(ZoneId.of("UTC")).toInstant());
-	
+
 	private User user = new User("max");
-	
+
 	public String submit() {
+		Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
+		flash.put("weight", weight);
+		flash.put("cost", cost);
+		flash.put("percentage", percentage);
+		flash.put("birthday", birthday);
+		flash.put("birthtime", birthtime);
+		flash.put("timestamp", timestamp);
+		flash.put("user", user);
 		return "success?faces-redirect=true";
 	}
 
@@ -85,5 +95,5 @@ public class ConverterController {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 }

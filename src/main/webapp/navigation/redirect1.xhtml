@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/template/template.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
-<h:head>
-	<title>OCJSFD</title>
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
+<ui:define name="title">
+	Navigation
+</ui:define>
+<ui:define name="content-title">
+	Navigation Test
+</ui:define>
+<ui:define name="content">
 	<f:metadata>
 		<f:viewParam name="key1" value="#{key1}" />
 		<f:viewParam name="key2" value="#{key2}" />
 	</f:metadata>
-</h:head>
-<h:body>
-	<h3>Redirect1</h3>
 	#{key1}
 	<br />
 	#{key2}
@@ -21,5 +24,5 @@
 	<br />
 	<h:button value="Home" outcome="home" />
 	<h:link value="Home" outcome="home" />
-</h:body>
-</html>
+</ui:define>
+</ui:composition>
