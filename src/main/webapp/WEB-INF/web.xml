@@ -30,6 +30,8 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	
-<!-- 	test rebase -->
+	<welcome-file-list>
+		<welcome-file>index.xhtml</welcome-file>
+	</welcome-file-list>
 	
 </web-app>
