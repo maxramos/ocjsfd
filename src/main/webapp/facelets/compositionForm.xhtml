@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <ui:composition template="/facelets/compositionTemplate.xhtml" 
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -18,5 +19,9 @@
 		<h:link value="Composition" outcome="/facelets/compositionForm" />
 		<h:link value="Decorate" outcome="/facelets/decorateForm" />
 	</h:panelGrid>
+	<ui:fragment rendered="#{true}">
+		<h:outputText value="Fragment Test" />
+		<br />
+	</ui:fragment>
 </ui:define>
 </ui:composition>
