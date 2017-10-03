@@ -18,5 +18,9 @@
 		<h:link value="Decorate" outcome="/facelets/decorateForm" />
 		<h:link value="Component" outcome="/facelets/componentForm" />
 	</h:panelGrid>
+	<ui:include src="/WEB-INF/component/fullname.xhtml">
+		<ui:param name="firstName" value="MaxMax" />
+		<ui:param name="lastName" value="RamosRamos" />
+	</ui:include>
 </ui:define>
 </ui:composition>
