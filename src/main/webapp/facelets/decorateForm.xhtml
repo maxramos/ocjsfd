@@ -25,10 +25,31 @@
 		</header>
 		<h:messages errorClass="error-message" />
 		<ui:decorate template="/facelets/decorateTemplate.xhtml">
-			<h:panelGrid columns="2">
-				<h:link value="Composition" outcome="/facelets/compositionForm" />
-				<h:link value="Decorate" outcome="/facelets/decorateForm" />
-			</h:panelGrid>
+			<ui:param name="key3" value="This is value3-1" />
+			<ui:param name="key4" value="This is value4-1" />
+			<ui:define name="first">
+				<h:panelGrid columns="2">
+					<h:link value="Composition" outcome="/facelets/compositionForm" />
+					<h:link value="Decorate" outcome="/facelets/decorateForm" />
+				</h:panelGrid>
+			</ui:define>
+			<ui:define name="second">
+				Second Define 1
+			</ui:define>
+		</ui:decorate>
+		<br />
+		<ui:decorate template="/facelets/decorateTemplate.xhtml">
+			<ui:param name="key3" value="This is value3-2" />
+			<ui:param name="key4" value="This is value4-2" />
+			<ui:define name="first">
+				<h:panelGrid columns="2">
+					<h:link value="Decorate" outcome="/facelets/decorateForm" />
+					<h:link value="Composition" outcome="/facelets/compositionForm" />
+				</h:panelGrid>
+			</ui:define>
+			<ui:define name="second">
+				Second Define 2
+			</ui:define>
 		</ui:decorate>
 	</section>
 	<footer id="footer">
