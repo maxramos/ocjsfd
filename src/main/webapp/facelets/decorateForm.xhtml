@@ -15,10 +15,10 @@
 <h:body>
 	<ui:debug hotkey="1" />
 	<header id="header">
-		<ui:include src="/section/header.xhtml" />
+		<ui:include src="/WEB-INF/section/header.xhtml" />
 	</header>
 	<nav id="navigation">
-		<ui:include src="/section/navigation.xhtml" />
+		<ui:include src="/WEB-INF/section/navigation.xhtml" />
 	</nav>
 	<section id="content">
 		<header id="content-title">
@@ -29,9 +29,10 @@
 			<ui:param name="key3" value="This is value3-1" />
 			<ui:param name="key4" value="This is value4-1" />
 			<ui:define name="first">
-				<h:panelGrid columns="2">
+				<h:panelGrid columns="3">
 					<h:link value="Composition" outcome="/facelets/compositionForm" />
 					<h:link value="Decorate" outcome="/facelets/decorateForm" />
+					<h:link value="Component" outcome="/facelets/componentForm" />
 				</h:panelGrid>
 			</ui:define>
 			<ui:define name="second">
@@ -43,9 +44,10 @@
 			<ui:param name="key3" value="This is value3-2" />
 			<ui:param name="key4" value="This is value4-2" />
 			<ui:define name="first">
-				<h:panelGrid columns="2">
+				<h:panelGrid columns="3">
 					<h:link value="Decorate" outcome="/facelets/decorateForm" />
 					<h:link value="Composition" outcome="/facelets/compositionForm" />
+					<h:link value="Component" outcome="/facelets/componentForm" />
 				</h:panelGrid>
 			</ui:define>
 			<ui:define name="second">
@@ -54,7 +56,7 @@
 		</ui:decorate>
 	</section>
 	<footer id="footer">
-		<ui:include src="/section/footer.xhtml" />
+		<ui:include src="/WEB-INF/section/footer.xhtml" />
 	</footer>
 </h:body>
 </html>

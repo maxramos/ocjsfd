@@ -6,12 +6,17 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:oc="http://ocjsfd.mramos.ph">
 <ui:define name="title">
-	OCJSFD
+	Facelets
 </ui:define>
 <ui:define name="content-title">
-	OCJSFD Test
+	Facelets Test
 </ui:define>
 <ui:define name="content">
-	Oracle Certified JSF Developer Test App
+	<oc:fullname />
+	<h:panelGrid columns="3">
+		<h:link value="Composition" outcome="/facelets/compositionForm" />
+		<h:link value="Decorate" outcome="/facelets/decorateForm" />
+		<h:link value="Component" outcome="/facelets/componentForm" />
+	</h:panelGrid>
 </ui:define>
 </ui:composition>
