@@ -24,17 +24,17 @@ public class PasswordValidator implements Validator {
 	public void validate(FacesContext fc, UIComponent component, Object value) throws ValidatorException {
 		if (value == null) {
 			log.info("Password Validator: null");
-			throw new ValidatorException(new FacesMessage("Password Required"));
+			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password Required", "Password Required"));
 		}
 
 		if ("".equals(value.toString())) {
 			log.info("Password Validator: empty");
-			throw new ValidatorException(new FacesMessage("Password Required"));
+			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password Required", "Password Required"));
 		}
 
 		if ("exv".equals(value.toString())) {
 			log.info("Password Validator: " + value);
-			throw new ValidatorException(new FacesMessage("Password Invalid"));
+			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password Invalid", "Password Invalid"));
 		}
 
 		log.info("Password Validator: " + value);

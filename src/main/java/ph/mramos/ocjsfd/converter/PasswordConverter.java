@@ -25,7 +25,7 @@ public class PasswordConverter implements Converter {
 		log.info("Password Converter: " + value);
 
 		if ("exc".equals(value)) {
-			throw new ConverterException(new FacesMessage("Password can't be converted."));
+			throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password can't be converted.", "Password can't be converted."));
 		}
 
 		return value;

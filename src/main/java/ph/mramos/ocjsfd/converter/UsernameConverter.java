@@ -25,7 +25,7 @@ public class UsernameConverter implements Converter {
 		log.info("Username Converter: " + value);
 
 		if ("exc".equals(value)) {
-			throw new ConverterException(new FacesMessage("Username can't be converted.") );
+			throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Username can't be converted.", "Username can't be converted.") );
 		}
 
 		return value;

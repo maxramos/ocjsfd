@@ -23,17 +23,17 @@ public class UsernameValidator implements Validator {
 	public void validate(FacesContext fc, UIComponent component, Object value) throws ValidatorException {
 		if (value == null) {
 			log.info("Username Validator: null");
-			throw new ValidatorException(new FacesMessage("Username Required"));
+			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Username Required", "Username Required"));
 		}
 
 		if ("".equals(value.toString())) {
 			log.info("Username Validator: empty");
-			throw new ValidatorException(new FacesMessage("Username Required"));
+			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Username Required", "Username Required"));
 		}
 
 		if ("exv".equals(value.toString())) {
 			log.info("Username Validator: " + value);
-			throw new ValidatorException(new FacesMessage("Username Invalid"));
+			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Username Invalid", "Username Invalid"));
 		}
 
 		log.info("Username Validator: " + value);
