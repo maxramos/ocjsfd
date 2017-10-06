@@ -7,6 +7,28 @@
 	<namespace>http://ocjsfd.mramos.ph</namespace>
 	
 	<tag>
+		<tag-name>spinner</tag-name>
+		<component>
+			<component-type>ph.mramos.ocjsfd.Spinner</component-type>
+		</component>
+		<attribute>
+			<name>id</name>
+		</attribute>
+		<attribute>
+			<name>value</name>
+		</attribute>
+		<attribute>
+			<name>size</name>
+		</attribute>
+		<attribute>
+			<name>minimum</name>
+		</attribute>
+		<attribute>
+			<name>maximum</name>
+		</attribute>
+	</tag>
+	
+	<tag>
 		<tag-name>fullname</tag-name>
 		<source>component/fullname.xhtml</source>
 	</tag>
