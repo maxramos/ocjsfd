@@ -9,7 +9,8 @@
 	<tag>
 		<tag-name>spinner</tag-name>
 		<component>
-			<component-type>ph.mramos.ocjsfd.Spinner</component-type>
+			<component-type>ph.mramos.ocjsfd.component.Spinner</component-type>
+			<renderer-type>ph.mramos.ocjsfd.component.SpinnerRenderer</renderer-type>
 		</component>
 		<attribute>
 			<name>id</name>
