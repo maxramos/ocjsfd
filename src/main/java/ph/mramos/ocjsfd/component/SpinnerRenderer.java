@@ -8,8 +8,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.ValueHolder;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
-import javax.faces.convert.Converter;
-import javax.faces.convert.ConverterException;
 import javax.faces.render.FacesRenderer;
 import javax.faces.render.Renderer;
 
@@ -73,18 +71,18 @@ public class SpinnerRenderer extends Renderer {
 		}
 	}
 
-	@Override
-	public Object getConvertedValue(FacesContext fc, UIComponent component, Object submittedValue) throws ConverterException {
-		if (submittedValue instanceof String) {
-			Converter converter = ((ValueHolder) component).getConverter();
-
-			if (converter != null) {
-				return converter.getAsObject(fc, component, (String) submittedValue);
-			}
-		}
-
-		return submittedValue;
-	}
+//	@Override
+//	public Object getConvertedValue(FacesContext fc, UIComponent component, Object submittedValue) throws ConverterException {
+//		if (submittedValue instanceof String) {
+//			Converter converter = ((ValueHolder) component).getConverter();
+//
+//			if (converter != null) {
+//				return converter.getAsObject(fc, component, (String) submittedValue);
+//			}
+//		}
+//
+//		return submittedValue;
+//	}
 
 	private static int getIncrementedValue(int submittedValue, int increment, UIComponent component) {
 		Integer minimum = toInteger(component.getAttributes().get("minimum"));
