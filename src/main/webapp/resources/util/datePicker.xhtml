@@ -5,27 +5,27 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:composite="http://java.sun.com/jsf/composite">
-	<composite:interface componentType="ph.mramos.ocjsfd.component.UIDate">
-		<composite:attribute name="value" type="java.util.Date" />	
-	</composite:interface>
-	
-	<composite:implementation>
-		<h:panelGrid columns="9">
-			<h:outputLabel for="month" value="Month" />
-			<h:selectOneMenu id="month" converter="javax.faces.Integer">
-				<f:selectItems value="#{dates.months}" var="month" itemLabel="#{month.key}" itemValue="#{month.value}" />
-			</h:selectOneMenu>
-			#{' '}
-			<h:outputLabel for="day" value="Day" />
-			<h:selectOneMenu id="day" converter="javax.faces.Integer">
-				<f:selectItems value="#{dates.days}" />
-			</h:selectOneMenu>
-			#{' '}
-			<h:outputLabel for="year" value="Year" />
-			<h:selectOneMenu id="year" converter="javax.faces.Integer">
-				<f:selectItems value="#{dates.years}" />
-			</h:selectOneMenu>
-			#{' '}
-		</h:panelGrid>
-	</composite:implementation>
+<composite:interface componentType="ph.mramos.ocjsfd.component.UIDate">
+	<composite:attribute name="value" type="java.util.Date" />	
+</composite:interface>
+
+<composite:implementation>
+	<h:panelGrid columns="9">
+		<h:outputLabel for="month" value="Month" />
+		<h:selectOneMenu id="month" converter="javax.faces.Integer">
+			<f:selectItems value="#{dates.months}" var="month" itemLabel="#{month.key}" itemValue="#{month.value}" />
+		</h:selectOneMenu>
+		#{' '}
+		<h:outputLabel for="day" value="Day" />
+		<h:selectOneMenu id="day" converter="javax.faces.Integer">
+			<f:selectItems value="#{dates.days}" />
+		</h:selectOneMenu>
+		#{' '}
+		<h:outputLabel for="year" value="Year" />
+		<h:selectOneMenu id="year" converter="javax.faces.Integer">
+			<f:selectItems value="#{dates.years}" />
+		</h:selectOneMenu>
+		#{' '}
+	</h:panelGrid>
+</composite:implementation>
 </html>
