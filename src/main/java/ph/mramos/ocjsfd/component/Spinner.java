@@ -2,7 +2,6 @@ package ph.mramos.ocjsfd.component;
 
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIInput;
-import javax.faces.convert.IntegerConverter;
 
 @FacesComponent("ph.mramos.ocjsfd.component.Spinner")
 public class Spinner extends UIInput {

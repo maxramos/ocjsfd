@@ -68,6 +68,4 @@ public class UIDate extends UIInput implements NamingContainer {
 		}
 	}
 
-
-
 }

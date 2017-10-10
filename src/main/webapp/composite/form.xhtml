@@ -17,7 +17,9 @@
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel for="expiry" value="Expiry" />
-			<util:datePicker value="#{compositeComponentController.expiry}" />
+			<util:datePicker value="#{compositeComponentController.expiry}">
+				<f:validator validatorId="dateValidator" />
+			</util:datePicker>
 		</h:panelGrid>
 		<h:commandButton value="Submit" action="#{compositeComponentController.submit}" />
 	</h:form>

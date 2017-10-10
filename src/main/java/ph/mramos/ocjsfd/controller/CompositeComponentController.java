@@ -11,6 +11,7 @@ import javax.inject.Named;
 @RequestScoped
 public class CompositeComponentController {
 
+//	@Future
 	private Date expiry;
 
 	public String submit() {
