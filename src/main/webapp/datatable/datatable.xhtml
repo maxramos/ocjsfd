@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+<ui:define name="title">
+	Data Table
+</ui:define>
+<ui:define name="content-title">
+	Data Table Test
+</ui:define>
+<ui:define name="content">
+	<h:link value="datatable" outcome="datatable" />
+	#{' '}
+	<h:link value="repeat" outcome="repeat" />
+	<br />
+	<h:form>
+		<h:dataTable value="#{dataTableController.names}" var="name" border="1" rules="all"
+			title="Table Title">
+			<f:facet name="header">
+				List of Names
+			</f:facet>
+			
+			<h:column>
+				#{dataTableController.names.rowIndex}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					First Name
+				</f:facet>
+				
+				<h:inputText value="#{name.firstName}" rendered="#{name.editable}" />
+				<h:outputText value="#{name.firstName}" rendered="#{not name.editable}" />
+				
+				<f:facet name="footer">
+					<h:inputText value="#{dataTableController. name.firstName}" />
+				</f:facet>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Last Name
+				</f:facet>
+				
+				<h:inputText value="#{name.lastName}" rendered="#{name.editable}" />
+				<h:outputText value="#{name.lastName}" rendered="#{not name.editable}" />
+				
+				<f:facet name="footer">
+					<h:inputText value="#{dataTableController.name.lastName}" />
+				</f:facet>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Edit?
+				</f:facet>
+				
+				<h:selectBooleanCheckbox value="#{name.editable}" onclick="submit()" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Action
+				</f:facet>
+				
+				<h:commandButton value="Delete" action="#{dataTableController.delete(name)}" />
+				
+				<f:facet name="footer">
+					<h:commandButton value="Add" action="#{dataTableController.add}" />
+				</f:facet>
+			</h:column>
+			
+			<f:facet name="footer">
+				Total: #{dataTableController.names.rowCount}
+			</f:facet>
+		</h:dataTable>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>
