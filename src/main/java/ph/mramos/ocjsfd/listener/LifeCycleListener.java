@@ -12,8 +12,6 @@ public class LifeCycleListener implements PhaseListener {
 	private static final long serialVersionUID = -2404582612023220974L;
 	private static final Logger log = LoggerFactory.getLogger(LifeCycleListener.class);
 
-
-
 	public LifeCycleListener() {
 		super();
 		log.info("Constructor: LifeCycleListener");

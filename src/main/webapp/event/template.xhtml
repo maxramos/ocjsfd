@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<f:view beforePhase="#{eventController.onBeforePhase}" afterPhase="#{eventController.onAfterPhase}">
+<h:head>
+	<title>
+		<ui:insert name="title">
+			OCJSFD
+		</ui:insert>
+	</title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+	<ui:debug hotkey="1" />
+	<header id="header">
+		<ui:insert name="header">
+			<ui:include src="/WEB-INF/section/header.xhtml" />
+		</ui:insert>
+	</header>
+	<nav id="navigation">
+		<ui:insert name="navigation">
+			<ui:include src="/WEB-INF/section/navigation.xhtml" />
+		</ui:insert>
+	</nav>
+	<section id="content">
+		<header id="content-title">
+			<ui:insert name="content-title">
+				Content Title
+			</ui:insert>
+		</header>
+		<h:messages errorClass="error-message" />
+		<ui:insert name="content">
+			Content
+		</ui:insert>
+	</section>
+	<footer id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/WEB-INF/section/footer.xhtml" />
+		</ui:insert>
+	</footer>
+</h:body>
+</f:view>
+</html>

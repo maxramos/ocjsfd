@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph"
+	xmlns:util="http://java.sun.com/jsf/composite/util">
+<ui:composition template="/event/template.xhtml">
+<ui:define name="title">
+	Event and Listener
+</ui:define>
+<ui:define name="content-title">
+	Event and Listener Test
+</ui:define>
+<ui:define name="content">
+	<f:phaseListener type="ph.mramos.ocjsfd.listener.ApplyRequestValuesPhaseListener" />
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="country" value="Country" />
+			<h:selectOneMenu id="country" value="#{eventController.country}" immediate="true"
+				valueChangeListener="#{eventController.onCountryChange}" onchange="submit();">
+				<f:selectItems value="#{eventController.countries}" var="country" itemLabel="#{country.value}" itemValue="#{country.key}" />
+				<f:event listener="#{eventController.onPostAddToView}" type="javax.faces.event.PostAddToViewEvent" />
+			</h:selectOneMenu>
+
+			<h:outputLabel for="language" value="Language" />
+			<h:selectOneMenu id="language" value="#{eventController.language}" onchange="submit();">
+				<f:selectItems value="#{eventController.languages}" var="language" itemLabel="#{language.value}" itemValue="#{language.key}" />
+				<f:valueChangeListener type="ph.mramos.ocjsfd.listener.LanguageValueChangeListener" />
+			</h:selectOneMenu>
+			
+			<h:commandButton value="Submit(attribute)" immediate="true" 
+				action="#{eventController.submit}" actionListener="#{eventController.onSubmit}" />
+			<h:commandButton value="Submit(tag)" action="#{eventController.submit}">
+				<f:actionListener type="ph.mramos.ocjsfd.listener.LocaleActionListener" />
+			</h:commandButton>
+			
+			<h:commandButton value="Submit(setProperty=en)" immediate="true" action="#{eventController.submit}">
+				<f:setPropertyActionListener value="en" target="#{eventController.lang}" />
+			</h:commandButton>
+			<h:commandButton value="Submit(setProperty=fr)" immediate="true" action="#{eventController.submit}">
+				<f:setPropertyActionListener value="fr" target="#{eventController.lang}" />
+			</h:commandButton>
+			
+			<h:commandButton value="Submit(method=USA)" immediate="true" action="#{eventController.submit('USA')}" />
+			<h:commandButton value="Submit(method=FRA)" immediate="true" action="#{eventController.submit('FRA')}" />
+		</h:panelGrid>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>

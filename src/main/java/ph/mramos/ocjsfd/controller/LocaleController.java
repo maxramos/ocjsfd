@@ -13,15 +13,11 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 @Named
 @ViewScoped
 public class LocaleController implements Serializable {
 
 	private static final long serialVersionUID = 1417603097444088600L;
-	private static final Logger log = LoggerFactory.getLogger(LocaleController.class);
 	private List<String> localeCodes;
 	private String localeCode;
 

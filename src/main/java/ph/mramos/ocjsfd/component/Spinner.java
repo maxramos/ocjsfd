@@ -7,8 +7,8 @@ import javax.faces.component.UIInput;
 public class Spinner extends UIInput {
 
 	public Spinner() {
-//		setConverter(new IntegerConverter());
-//		setRendererType("ph.mramos.ocjsfd.component.SpinnerRenderer");
+		//		setConverter(new IntegerConverter());
+		//		setRendererType("ph.mramos.ocjsfd.component.SpinnerRenderer");
 	}
 
 	@Override
