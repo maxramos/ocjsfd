@@ -6,6 +6,12 @@
 	version="2.0">
 	<namespace>http://ocjsfd.mramos.ph</namespace>
 	
+	<function>
+		<function-name>getFile</function-name>
+		<function-class>ph.mramos.ocjsfd.util.ELFunctions</function-class>
+		<function-signature>java.lang.String getFile(java.lang.String)</function-signature>
+	</function>
+	
 	<tag>
 		<tag-name>spinner</tag-name>
 		<component>
