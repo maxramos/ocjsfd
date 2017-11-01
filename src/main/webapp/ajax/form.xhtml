@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph"
+	xmlns:util="http://java.sun.com/jsf/composite/util">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+<ui:define name="title">
+	Ajax
+</ui:define>
+<ui:define name="content-title">
+	Ajax Test
+</ui:define>
+<ui:define name="content">
+	<h:outputScript library="js" name="script.js" />
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="menu" value="Menu" />
+			<h:selectOneMenu id="menu" value="#{ajaxController.item}">
+				<f:ajax execute="@this input" render="output" listener="#{ajaxController.onMenuChange}" />
+				<f:selectItem itemLabel="USA" itemValue="USA" />
+				<f:selectItem itemLabel="FRA" itemValue="FRA" />
+				<f:selectItem itemLabel="ESP" itemValue="ESP" />
+			</h:selectOneMenu>
+			
+			<h:outputLabel for="input" value="Input" />
+			<h:inputText id="input" value="#{ajaxController.message}" validator="#{ajaxController.validateMessage}">
+				<f:ajax event="keyup" execute="@this menu" render="output" onevent="showProgress" onerror="showError" />
+			</h:inputText>
+			
+			<h:outputLabel value="Output" />
+			<h:outputText id="output" value="'#{ajaxController.item} : #{ajaxController.message}'" />
+		</h:panelGrid>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>
