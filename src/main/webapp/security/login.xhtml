@@ -14,7 +14,7 @@
 	Security Test
 </ui:define>
 <ui:define name="content">
-	<h:form>
+	<h:form prependId="false">
 		<h:panelGrid columns="3">
 			<h:outputLabel for="username" value="Username" />
 			<h:inputText id="username" value="#{securityController.username}" required="true" label="Username" />
@@ -28,17 +28,15 @@
 		</h:panelGrid>
 	</h:form>
 
-	<ui:remove>
-	<form method="post" action="j_security_check">
-		<label for="username">Username</label>
-		<input  type="text" id="username" name="j_username" />
-		<br />
-		<label for="password">Password</label>
-		<input  type="text" id="password" name="j_password" />
-		<br />
-		<input type="submit" value="Login" />
-	</form>
-	</ui:remove>
+<!-- 	<form method="post" action="j_security_check"> -->
+<!-- 		<label for="username">Username</label> -->
+<!-- 		<input  type="text" id="username" name="j_username" /> -->
+<!-- 		<br /> -->
+<!-- 		<label for="password">Password</label> -->
+<!-- 		<input  type="text" id="password" name="j_password" /> -->
+<!-- 		<br /> -->
+<!-- 		<input type="submit" value="Login" /> -->
+<!-- 	</form> -->
 </ui:define>
 </ui:composition>
 </html>
