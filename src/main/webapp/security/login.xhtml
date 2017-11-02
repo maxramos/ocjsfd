@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph"
+	xmlns:util="http://java.sun.com/jsf/composite/util">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+<ui:define name="title">
+	Securuty
+</ui:define>
+<ui:define name="content-title">
+	Security Test
+</ui:define>
+<ui:define name="content">
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel for="username" value="Username" />
+			<h:inputText id="username" value="#{securityController.username}" required="true" label="Username" />
+			<h:message for="username" errorClass="error-message" />
+			
+			<h:outputLabel for="password" value="Password" />
+			<h:inputSecret id="password" value="#{securityController.password}" required="true" label="Password" />
+			<h:message for="password" errorClass="error-message" />
+			
+			<h:commandButton value="Login" action="#{securityController.authenticate}" />
+		</h:panelGrid>
+	</h:form>
+
+	<ui:remove>
+	<form method="post" action="j_security_check">
+		<label for="username">Username</label>
+		<input  type="text" id="username" name="j_username" />
+		<br />
+		<label for="password">Password</label>
+		<input  type="text" id="password" name="j_password" />
+		<br />
+		<input type="submit" value="Login" />
+	</form>
+	</ui:remove>
+</ui:define>
+</ui:composition>
+</html>
