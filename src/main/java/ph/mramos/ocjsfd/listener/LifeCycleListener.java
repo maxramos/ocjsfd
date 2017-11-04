@@ -14,22 +14,23 @@ public class LifeCycleListener implements PhaseListener {
 
 	public LifeCycleListener() {
 		super();
-		log.info("Constructor: LifeCycleListener");
+		// log.info("constructor: LifeCycleListener()");
 	}
 
 	@Override
 	public PhaseId getPhaseId() {
+		// log.info("method: getPhaseId()");
 		return PhaseId.ANY_PHASE;
 	}
 
 	@Override
 	public void beforePhase(PhaseEvent event) {
-		log.info("Start Phase: " + event.getPhaseId());
+		log.info("method: beforePhase(): " + event.getPhaseId());
 	}
 
 	@Override
 	public void afterPhase(PhaseEvent event) {
-		log.info("End Phase: " + event.getPhaseId());
+		log.info("method: afterPhase(): " + event.getPhaseId());
 
 	}
 

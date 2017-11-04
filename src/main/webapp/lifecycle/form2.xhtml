@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:oc="http://ocjsfd.mramos.ph"
+	xmlns:util="http://java.sun.com/jsf/composite/util">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+<ui:define name="title">
+	Life Cycle
+</ui:define>
+<ui:define name="content-title">
+	Life Cycle Test
+</ui:define>
+<ui:define name="content">
+	<f:phaseListener type="ph.mramos.ocjsfd.listener.LifeCycleListener" />
+	
+	<h:panelGrid>
+		<h:link value="Input[immediate=false]: Command[immediate=false]" outcome="/lifecycle/form1" />
+		<h:link value="Input[immediate=true]: Command[immediate=false]" outcome="/lifecycle/form2" />
+		<h:link value="Input[immediate=false]: Command[immediate=true]" outcome="/lifecycle/form3" />
+		<h:link value="Input[immediate=true]: Command[immediate=true]" outcome="/lifecycle/form4" />
+		<h:link value="Login" outcome="/lifecycle/login" />
+	</h:panelGrid>
+	
+	<h3>Input[immediate=true]: Command[immediate=false]</h3>
+	<h:form id="form1">
+		<h:panelGrid columns="2">
+			<h:outputLabel for="input1" value="Input1:" />
+			<h:inputText id="input1" value="#{lifeCycleRequestScopedController.input1}" 
+				converter="inputConverter1"
+				valueChangeListener="#{lifeCycleRequestScopedController.input1ValueChangeListener}"
+				validator="#{lifeCycleRequestScopedController.validateInput}" />
+			
+			<h:outputLabel for="input2" value="Input2(immediate):" />
+			<h:inputText id="input2" value="#{lifeCycleRequestScopedController.input2}" immediate="true"
+				converter="inputConverter1"
+				valueChangeListener="#{lifeCycleRequestScopedController.input2ValueChangeListener}"
+				validator="#{lifeCycleRequestScopedController.validateInput}">
+				<f:converter converterId="inputConverter2" />
+				<f:valueChangeListener type="ph.mramos.ocjsfd.listener.InputValueChangeListener" />
+				<f:validator validatorId="inputValidator1" />
+				<f:validator validatorId="inputValidator2" />
+			</h:inputText>
+			
+			<h:outputLabel value="Output1:" />
+			<h:outputText  value="#{lifeCycleRequestScopedController.input1}" />
+			
+			<h:outputLabel value="Output2:" />
+			<h:outputText  value="#{lifeCycleRequestScopedController.input2}" />
+			
+			<h:commandButton id="submit1" value="Submit1" 
+				actionListener="#{lifeCycleRequestScopedController.submitActionListener}" 
+				action="#{lifeCycleRequestScopedController.submit}">
+				<f:actionListener type="ph.mramos.ocjsfd.listener.SubmitActionListener" />
+				<f:setPropertyActionListener value="submitVal1" target="#{lifeCycleRequestScopedController.submitVal}" />
+			</h:commandButton>
+			<h:commandButton id="submit2" value="Submit2" 
+				actionListener="#{lifeCycleRequestScopedController.submitActionListener}" 
+				action="#{lifeCycleRequestScopedController.submit}">
+				<f:actionListener type="ph.mramos.ocjsfd.listener.SubmitActionListener" />
+				<f:setPropertyActionListener value="submitVal2" target="#{lifeCycleRequestScopedController.submitVal}" />
+			</h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>
