@@ -2,13 +2,13 @@ package ph.mramos.ocjsfd.controller;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.validator.ValidatorException;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import org.slf4j.Logger;
@@ -17,17 +17,18 @@ import org.slf4j.LoggerFactory;
 import ph.mramos.ocjsfd.model.Input;
 
 @Named
-@RequestScoped
-public class LifeCycleRequestScopedController implements Serializable {
+// @RequestScoped
+@ViewScoped
+public class LifeCycleController implements Serializable {
 
 	private static final long serialVersionUID = 2362133227979078979L;
-	private static final Logger log = LoggerFactory.getLogger(LifeCycleRequestScopedController.class);
+	private static final Logger log = LoggerFactory.getLogger(LifeCycleController.class);
 
 	private Input input1;
 	private Input input2;
 	private String submitVal;
 
-	public LifeCycleRequestScopedController() {
+	public LifeCycleController() {
 		super();
 		log.info("constructor: LifeCycleRequestScopedController()");
 	}

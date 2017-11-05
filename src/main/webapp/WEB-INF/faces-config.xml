@@ -17,15 +17,15 @@
 			<supported-locale>es</supported-locale>
 		</locale-config>
 		
-		<system-event-listener>
-			<system-event-listener-class>ph.mramos.ocjsfd.listener.PostContructViewMapListener</system-event-listener-class>
-			<system-event-class>javax.faces.event.PostConstructViewMapEvent</system-event-class>
-		</system-event-listener>
+<!-- 		<system-event-listener> -->
+<!-- 			<system-event-listener-class>ph.mramos.ocjsfd.listener.PostContructViewMapListener</system-event-listener-class> -->
+<!-- 			<system-event-class>javax.faces.event.PostConstructViewMapEvent</system-event-class> -->
+<!-- 		</system-event-listener> -->
 	</application>
 	
-	<lifecycle>
+<!-- 	<lifecycle> -->
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
-	</lifecycle>
+<!-- 	</lifecycle> -->
 	
 <!-- 	<application> -->
 <!-- 		<message-bundle></message-bundle> -->
