@@ -19,6 +19,8 @@ import ph.mramos.ocjsfd.model.Input;
 @Named
 // @RequestScoped
 @ViewScoped
+// @SessionScoped
+//@ApplicationScoped
 public class LifeCycleController implements Serializable {
 
 	private static final long serialVersionUID = 2362133227979078979L;
