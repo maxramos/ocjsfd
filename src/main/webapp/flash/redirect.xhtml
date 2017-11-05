@@ -19,12 +19,14 @@
 		<h:outputText value="'#{flash.input}'" />
 		
 		<h:outputText value="Input Keep: " />
-		<h:outputText value="'#{flash.keep.inputkeep}'" />
+		<h:outputText value="'#{flash.inputkeep}'" />
 		
 		<h:outputText value="Messages: " />
 		<h:messages globalOnly="true" />			
 	</h:panelGrid>
 	<h:button outcome="next" value="Next" />
+	<!-- must be after flash.inputkeep for this to take effect -->
+	#{flash.keep.inputkeep}
 </ui:define>
 </ui:composition>
 </html>

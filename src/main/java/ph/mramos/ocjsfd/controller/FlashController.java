@@ -12,19 +12,18 @@ import org.slf4j.LoggerFactory;
 @Named
 @RequestScoped
 public class FlashController {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(FlashController.class);
 
 	private String input;
-	
+
 	public String submit() {
 		FacesContext fc = FacesContext.getCurrentInstance();
 		Flash flash = fc.getExternalContext().getFlash();
 		flash.put("input", input);
 		flash.put("inputkeep", input);
 		fc.addMessage(null, new FacesMessage(input));
-		
-		
+
 		if ("forward".equals(input)) {
 			return "forward";
 		} else if ("forwardkeep".equals(input)) {
@@ -38,7 +37,7 @@ public class FlashController {
 			log.info("Keep Message: " + flash.isKeepMessages());
 			return "redirect?faces-redirect=true";
 		}
-		
+
 		return null;
 	}
 
@@ -49,5 +48,5 @@ public class FlashController {
 	public void setInput(String input) {
 		this.input = input;
 	}
-	
+
 }
