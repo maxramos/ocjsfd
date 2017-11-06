@@ -23,21 +23,25 @@
 			<h:inputText id="username" value="#{navigationController.username}" />
 			
 			<h:commandButton value="Submit" action="#{navigationController.submit}" />
+			<h:panelGroup></h:panelGroup>
+			
+			<h:panelGroup></h:panelGroup>
 			<h:link value="Redirect1" outcome="redirect1">
 				<f:param name="key1" value="Value1" />
 				<f:param name="key2" value="Value2" />
 			</h:link>
 			
+			<h:commandButton value="Redirect3" action="redirect3?faces-redirect=true&amp;includeViewParams=true" />
 			<h:link value="Redirect3" outcome="redirect3">
 				<f:param name="age" value="#{navigationController.age}" />
 				<f:param name="birthPlace" value="#{navigationController.birthPlace}" />
 			</h:link>
-			<h:commandButton value="Redirect3" action="redirect3?faces-redirect=true&amp;includeViewParams=true" />
 			
 			<h:commandButton value="Redirect4" action="#{navigationController.submit2}">
 				<f:param name="age" value="30" />
 				<f:param name="birthPlace" value="Pagbilao" />
 			</h:commandButton>
+			<h:panelGroup></h:panelGroup>
 		</h:panelGrid>
 	</h:form>
 </ui:define>
