@@ -34,7 +34,7 @@
 			<tbody>
 			<ui:repeat var="name" varStatus="status" value="#{dataTableController.names}">
 				<tr>
-					<td>#{status.index}</td>
+					<th scope="row">#{status.index}</th>
 					<td>
 						<h:inputText value="#{name.firstName}" rendered="#{name.editable}" />
 						<h:outputText value="#{name.firstName}" rendered="#{not name.editable}" />
