@@ -13,11 +13,15 @@
 	Tag Test
 </ui:define>
 <ui:define name="content">
+	<h:link value="Output" outcome="/tag/form" />
+	#{' '}
+	<h:link value="Input" outcome="/tag/tag2" />
+
 	<h:form>
 		<h:inputHidden id="timestamp" value="#{tag2Controller.timestamp}" />
 		<h:panelGrid columns="2">
 			<h:outputLabel for="username" value="Username" />
-			<h:inputText id="username" value="#{tag2Controller.username}" required="true" />
+			<h:inputText id="username" value="#{tag2Controller.username}" />
 			
 			<h:outputLabel for="password" value="Password" />
 			<h:inputSecret id="password" value="#{tag2Controller.password}" />
@@ -36,7 +40,7 @@
 			<h:selectBooleanCheckbox id="employed" value="#{tag2Controller.employed}" />
 			
 			<h:outputLabel for="food" value="Food" />
-			<h:selectManyCheckbox id="food" value="#{tag2Controller.food}" layout="pageDirection">
+			<h:selectManyCheckbox id="food" value="#{tag2Controller.food}" layout="pageDirection" collectionType="java.util.LinkedList">
 				<f:selectItems value="#{tag2Controller.foods}" />
 			</h:selectManyCheckbox>
 			

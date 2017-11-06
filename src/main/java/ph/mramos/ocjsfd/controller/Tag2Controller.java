@@ -1,7 +1,9 @@
 package ph.mramos.ocjsfd.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,9 +15,14 @@ import javax.faces.context.Flash;
 import javax.faces.model.SelectItem;
 import javax.inject.Named;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Named
 @RequestScoped
 public class Tag2Controller {
+
+	private static final Logger log = LoggerFactory.getLogger(Tag2Controller.class);
 
 	private String timestamp;
 	private String username;
@@ -28,7 +35,7 @@ public class Tag2Controller {
 	private List<String> drink;
 	private Integer salary;
 	private List<String> color;
-	
+
 	public String save() {
 		Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
 		flash.put("timestamp", timestamp);
@@ -42,14 +49,22 @@ public class Tag2Controller {
 		flash.put("drink", drink);
 		flash.put("salary", salary);
 		flash.put("color", color);
-		
+
+		if (food instanceof ArrayList) {
+			log.info("Collection is ArrayList");
+		} else if (food instanceof LinkedList) {
+			log.info("Collection is LinkedList");
+		} else {
+			log.info("Collection is unknown");
+		}
+
 		return "success?faces-redirect=true";
 	}
-	
+
 	public List<String> getFoods() {
 		return Arrays.asList("Chicken", "Burger", "Spaghetti");
 	}
-	
+
 	public Map<String, String> getCountries() {
 		Map<String, String> countries = new LinkedHashMap<>();
 		countries.put("Philippines", "ph");
@@ -58,24 +73,24 @@ public class Tag2Controller {
 		countries.put("Japan", "jp");
 		return countries;
 	}
-	
+
 	public String[] getDrinks() {
 		return Arrays.asList("Coke", "Sprite", "Royal").toArray(new String[3]);
 	}
-	
+
 	public SelectItem[] getSalaries() {
 		return new SelectItem[] {
 				new SelectItem(250_000, "< 250,000"),
 				new SelectItem(500_000, "< 500,000"),
 				new SelectItem(750_000, "< 750,000"),
 				new SelectItem(1_000_000, "< 1,000,000")
-		};		
+		};
 	}
-	
+
 	public Set<String> getColors() {
-		return new TreeSet<String>(Arrays.asList("Red", "Blue", "Yellow", "Orange"));
+		return new TreeSet<>(Arrays.asList("Red", "Blue", "Yellow", "Orange"));
 	}
-	
+
 	public String getTimestamp() {
 		return timestamp;
 	}
@@ -83,7 +98,7 @@ public class Tag2Controller {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -107,7 +122,7 @@ public class Tag2Controller {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 	public String getMaritalStatus() {
 		return maritalStatus;
 	}
@@ -131,7 +146,7 @@ public class Tag2Controller {
 	public void setFood(List<String> food) {
 		this.food = food;
 	}
-	
+
 	public String getCountry() {
 		return country;
 	}
@@ -155,7 +170,7 @@ public class Tag2Controller {
 	public void setSalary(Integer salary) {
 		this.salary = salary;
 	}
-	
+
 	public List<String> getColor() {
 		return color;
 	}
