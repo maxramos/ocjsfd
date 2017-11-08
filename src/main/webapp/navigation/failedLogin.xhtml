@@ -13,6 +13,15 @@
 	Navigation Test
 </ui:define>
 <ui:define name="content">
+	<f:metadata>
+		<f:viewParam name="age" />
+		<f:viewParam name="birthPlace" />
+	</f:metadata>
+	<h:panelGrid>
+		<h:outputText value="#{param.age}" />
+		<h:outputText value="#{param.birthPlace}" />
+		<h:outputText value="#{param.user}" />
+	</h:panelGrid>
 	<h:button value="Home" outcome="home" />
 	<h:link value="Home" outcome="home" />
 </ui:define>

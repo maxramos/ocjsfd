@@ -14,13 +14,13 @@
 </ui:define>
 <ui:define name="content">
 	<f:metadata>
-		<f:viewParam name="item" value="#{flash.item}" />
+		<f:viewParam name="item" />
 		<f:event listener="#{navigationController.onBeforeRenderView}" type="preRenderView" />
 	</f:metadata>
-	#{flash.item}
-	<br />
-	#{navigationController.message}
-	<br />
+	<h:panelGrid>
+		<h:outputText value="#{param.item}" />
+		<h:outputText value="#{navigationController.message}" />
+	</h:panelGrid>
 	<h:button value="Home" outcome="home" />
 	<h:link value="Home" outcome="home" />
 </ui:define>
