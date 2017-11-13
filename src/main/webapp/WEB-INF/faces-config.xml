@@ -27,11 +27,11 @@
 <!-- 		<phase-listener>ph.mramos.ocjsfd.listener.LifeCycleListener</phase-listener> -->
 <!-- 	</lifecycle> -->
 	
-<!-- 	<application> -->
-<!-- 		<message-bundle></message-bundle> -->
-<!-- 		<resource-bundle></resource-bundle> -->
-<!-- 	</application> -->
-	
+<!-- 	<component> -->
+<!-- 		<component-type></component-type> -->
+<!-- 		<component-class></component-class> -->
+<!-- 	</component> -->
+
 <!-- 	<converter> -->
 <!-- 		<converter-id>userConverter</converter-id> -->
 <!-- 		<converter-class>ph.mramos.ocjsfd.converter.UserConverter</converter-class> -->
@@ -41,6 +41,24 @@
 <!-- 		<validator-id>addressValidator</validator-id> -->
 <!-- 		<validator-class>ph.mramos.ocjsfd.validator.AddressValidator</validator-class> -->
 <!-- 	</validator> -->
+	
+<!-- 	<managed-bean> -->
+<!-- 		<managed-bean-name></managed-bean-name> -->
+<!-- 		<managed-bean-class></managed-bean-class> -->
+<!-- 		<managed-bean-scope></managed-bean-scope> -->
+<!-- 		<managed-property> -->
+<!-- 			<property-name></property-name> -->
+<!-- 			<list-entries> -->
+<!-- 				<value></value> -->
+<!-- 			</list-entries> -->
+<!-- 			<map-entries> -->
+<!-- 				<map-entry> -->
+<!-- 					<key></key> -->
+<!-- 					<value></value> -->
+<!-- 				</map-entry> -->
+<!-- 			</map-entries> -->
+<!-- 		</managed-property> -->
+<!-- 	</managed-bean> -->
 	
 	<navigation-rule>
 		<from-view-id>/navigation/*</from-view-id>

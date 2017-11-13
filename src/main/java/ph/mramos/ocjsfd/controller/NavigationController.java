@@ -11,24 +11,24 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class NavigationController {
-	
+
 	private String username;
 	private String message;
 	private Integer age = 20;
 	private String birthPlace = "Lucena City";
-	
+
 	public String submit() {
 		if ("max".equals(username)) {
 			return "success";
 		}
-		
+
 		if ("mac".equals(username)) {
 			return null;
 		}
-		 
+
 		return "fail";
 	}
-	
+
 	public String submit2() {
 		Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 		Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
@@ -40,7 +40,7 @@ public class NavigationController {
 	public void onBeforeRenderView(ComponentSystemEvent event) {
 		message = "This is a message";
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}

@@ -16,7 +16,14 @@
 	<f:metadata>
 		<f:viewParam name="age" value="#{navigationController.age}" />
 		<f:viewParam name="birthPlace" value="#{navigationController.birthPlace}" />
+		<f:viewParam name="keyAttr">
+			<f:validateRequired />
+		</f:viewParam>
 	</f:metadata>
+	<h:panelGrid>
+		<h:outputText value="Key Request: #{param.keyReq}" />
+		<h:outputText value="Key Attr: #{keyAttr}" />
+	</h:panelGrid>
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel for="username" value="Username" />
