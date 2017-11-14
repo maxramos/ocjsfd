@@ -13,8 +13,13 @@ import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.ConverterException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @FacesComponent("ph.mramos.ocjsfd.component.UIDate")
 public class UIDate extends UIInput implements NamingContainer {
+
+	private static final Logger log = LoggerFactory.getLogger(UIInput.class);
 
 	@Override
 	public String getFamily() {
@@ -37,6 +42,12 @@ public class UIDate extends UIInput implements NamingContainer {
 		UIInput monthComponent = (UIInput) findComponent("month");
 		UIInput dayComponent = (UIInput) findComponent("day");
 		UIInput yearComponent = (UIInput) findComponent("year");
+
+		if (!fc.isValidationFailed()) {
+			monthComponent.setSubmittedValue(null);
+			dayComponent.setSubmittedValue(null);
+			yearComponent.setSubmittedValue(null);
+		}
 
 		monthComponent.setValue(month);
 		dayComponent.setValue(day);

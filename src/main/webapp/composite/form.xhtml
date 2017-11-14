@@ -17,10 +17,11 @@
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel for="expiry" value="Expiry" />
-			<util:datePicker value="#{compositeComponentController.expiry}">
+			<util:datePicker value="#{compositeComponentController.expiry}" str="This is a string" now="#{compositeComponentController.now}">
 				<f:validator validatorId="dateValidator" />
 			</util:datePicker>
 		</h:panelGrid>
+		<h:commandButton value="Now" action="#{compositeComponentController.now}" immediate="true" />
 		<h:commandButton value="Submit" action="#{compositeComponentController.submit}" />
 	</h:form>
 </ui:define>

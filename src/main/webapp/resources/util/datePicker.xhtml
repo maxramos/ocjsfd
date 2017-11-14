@@ -6,11 +6,13 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:composite="http://java.sun.com/jsf/composite">
 <composite:interface componentType="ph.mramos.ocjsfd.component.UIDate">
-	<composite:attribute name="value" type="java.util.Date" />	
+	<composite:attribute name="value" type="java.util.Date" />
+	<composite:attribute name="str" type="java.lang.String" />
+	<composite:attribute name="now" method-signature="java.lang.String now()" />
 </composite:interface>
 
 <composite:implementation>
-	<h:panelGrid columns="9">
+	<h:panelGrid columns="10">
 		<h:outputLabel for="month" value="Month" />
 		<h:selectOneMenu id="month" converter="javax.faces.Integer">
 			<f:selectItems value="#{dates.months}" var="month" itemLabel="#{month.key}" itemValue="#{month.value}" />
@@ -26,6 +28,8 @@
 			<f:selectItems value="#{dates.years}" />
 		</h:selectOneMenu>
 		#{' '}
+		<h:commandButton value="Now" action="#{cc.attrs.now}" immediate="true" />
 	</h:panelGrid>
+	#{cc.attrs.str}
 </composite:implementation>
 </html>
