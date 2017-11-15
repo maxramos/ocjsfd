@@ -42,6 +42,16 @@
 <!-- 		<validator-class>ph.mramos.ocjsfd.validator.AddressValidator</validator-class> -->
 <!-- 	</validator> -->
 	
+<!-- 	<render-kit> -->
+<!-- 		<render-kit-id></render-kit-id> -->
+<!-- 		<render-kit-class></render-kit-class> -->
+<!-- 		<renderer> -->
+<!-- 			<component-family></component-family> -->
+<!-- 			<renderer-type></renderer-type> -->
+<!-- 			<renderer-class></renderer-class> -->
+<!-- 		</renderer> -->
+<!-- 	</render-kit> -->
+	
 <!-- 	<managed-bean> -->
 <!-- 		<managed-bean-name></managed-bean-name> -->
 <!-- 		<managed-bean-class></managed-bean-class> -->
