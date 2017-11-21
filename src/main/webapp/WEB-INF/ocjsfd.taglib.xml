@@ -17,6 +17,7 @@
 		<component>
 			<component-type>ph.mramos.ocjsfd.component.Spinner</component-type>
 			<renderer-type>ph.mramos.ocjsfd.component.SpinnerRenderer</renderer-type>
+<!-- 			<handler-class></handler-class> -->
 		</component>
 		<attribute>
 			<name>id</name>
