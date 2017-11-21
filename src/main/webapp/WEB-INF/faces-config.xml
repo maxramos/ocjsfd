@@ -20,6 +20,7 @@
 		<system-event-listener>
 			<system-event-listener-class>ph.mramos.ocjsfd.listener.PostContructViewMapListener</system-event-listener-class>
 			<system-event-class>javax.faces.event.PostConstructViewMapEvent</system-event-class>
+<!-- 			<source-class></source-class> -->
 		</system-event-listener>
 		
 <!-- 		<default-validators> -->
