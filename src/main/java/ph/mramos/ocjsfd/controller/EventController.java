@@ -3,6 +3,7 @@ package ph.mramos.ocjsfd.controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
@@ -62,6 +63,11 @@ public class EventController implements Serializable {
 		log.info("Country: " + country);
 		log.info("Language: " + language);
 		log.info("Lang: " + lang);
+
+		Map<String, String> requestMap = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		Map<String, Object> attributeMap = FacesContext.getCurrentInstance().getExternalContext().getRequestMap();
+		log.info("Request Map: " + requestMap);
+		log.info("Attribute Map: " + attributeMap);
 	}
 
 	public void submit(String _country) {
@@ -79,6 +85,12 @@ public class EventController implements Serializable {
 
 	public void onSubmit(ActionEvent event) {
 		log.info("On Submit (attribute)" + event.getPhaseId());
+
+		Map<String, String> requestMap = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		Map<String, Object> attributeMap = FacesContext.getCurrentInstance().getExternalContext().getRequestMap();
+		log.info("Request Map: " + requestMap);
+		log.info("Attribute Map: " + attributeMap);
+		log.info("Component Attribute (attrKey): " + event.getComponent().getAttributes().get("attrKey"));
 	}
 
 	public void onBeforePhase(PhaseEvent event) {

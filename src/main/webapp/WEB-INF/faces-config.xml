@@ -35,6 +35,7 @@
 <!-- 	<converter> -->
 <!-- 		<converter-id>userConverter</converter-id> -->
 <!-- 		<converter-class>ph.mramos.ocjsfd.converter.UserConverter</converter-class> -->
+<!-- 		<converter-for-class>ph.mramos.ocjsfd.model.User</converter-for-class> -->
 <!-- 	</converter> -->
 	
 <!-- 	<validator> -->

@@ -45,6 +45,13 @@
 			
 			<h:commandButton value="Submit(method=USA)" immediate="true" action="#{eventController.submit('USA')}" />
 			<h:commandButton value="Submit(method=FRA)" immediate="true" action="#{eventController.submit('FRA')}" />
+			
+			<h:commandButton value="Submit(f:attribute)" action="#{eventController.submit}" actionListener="#{eventController.onSubmit}">
+				<f:attribute name="attrKey" value="Attribute Value Button" />
+			</h:commandButton>
+			<h:commandLink value="Submit(f:attribute)" action="#{eventController.submit}" actionListener="#{eventController.onSubmit}">
+				<f:attribute name="attrKey" value="Attribute Value Link" />
+			</h:commandLink>
 		</h:panelGrid>
 	</h:form>
 </ui:define>
