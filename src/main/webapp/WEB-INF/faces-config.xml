@@ -59,6 +59,7 @@
 <!-- 		<managed-bean-scope></managed-bean-scope> -->
 <!-- 		<managed-property> -->
 <!-- 			<property-name></property-name> -->
+<!-- 			<value></value> -->
 <!-- 			<list-entries> -->
 <!-- 				<value></value> -->
 <!-- 			</list-entries> -->
